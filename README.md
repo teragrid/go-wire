@@ -11,7 +11,7 @@ logic objects and persistence objects.
 **CAVEAT:** we're still building out the ecosystem, which is currently most
 developed in Go.  But Amino is not just for Go — if you'd like to
 contribute by creating supporting libraries in various languages from scratch,
-or by adapting existing Protobuf3 libraries, please [open an issue on GitHub](https://github.com/tendermint/go-amino/issues)!
+or by adapting existing Protobuf3 libraries, please [open an issue on GitHub](https://github.com/teragrid/go-amino/issues)!
 
 # Why Amino?
 
@@ -28,7 +28,7 @@ Amino wants to be Protobuf4. The bulk of this spec will
 explain how Amino differs from Protobuf3. Here, we will illustrate two key
 selling points for Amino.
 
-* In Protobuf3, [embedded message are `varint` byte-length prefixed]((https://github.com/tendermint/go-amino/wiki/aminoscan));
+* In Protobuf3, [embedded message are `varint` byte-length prefixed]((https://github.com/teragrid/go-amino/wiki/aminoscan));
   However, this makes the binary encoding naturally more inefficient, as bytes cannot
   simply be written to a memory array (buffer) in sequence without allocating a
   new buffer for each embedded message. Amino is encoded in such a way that the
@@ -60,7 +60,7 @@ writing translators to and from your logic objects.  Amino can eliminate this ex
 ## Amino in the Wild
 
 * Amino:binary spec in [Tendermint](
-https://github.com/tendermint/tendermint/blob/develop/docs/specification/new-spec/encoding.md)
+https://github.com/teragrid/teragrid/blob/develop/docs/specification/new-spec/encoding.md)
 
 ## Amino Spec
 
@@ -83,8 +83,8 @@ and its respective concrete type implementers should be registered with `codec.R
 ```go
 amino.RegisterInterface((*MyInterface1)(nil), nil)
 amino.RegisterInterface((*MyInterface2)(nil), nil)
-amino.RegisterConcrete(MyStruct1{}, "com.tendermint/MyStruct1", nil)
-amino.RegisterConcrete(MyStruct2{}, "com.tendermint/MyStruct2", nil)
+amino.RegisterConcrete(MyStruct1{}, "com.teragrid/MyStruct1", nil)
+amino.RegisterConcrete(MyStruct2{}, "com.teragrid/MyStruct2", nil)
 amino.RegisterConcrete(&MyStruct3{}, "anythingcangoinhereifitsunique", nil)
 ```
 
@@ -108,7 +108,7 @@ When there are 1024 concrete types registered that implement the same interface,
 the probability of there being a conflict is ~ 0.1%.
 
 This is assuming that all registered concrete types have unique natural names
-(e.g.  prefixed by a unique entity name such as "com.tendermint/", and not
+(e.g.  prefixed by a unique entity name such as "com.teragrid/", and not
 "mined/grinded" to produce a particular sequence of "prefix bytes"). Do not
 mine/grind to produce a particular sequence of prefix bytes, and avoid using
 dependencies that do so.
@@ -153,7 +153,7 @@ To compute the disambiguation bytes, we take `hash := sha256(concreteTypeName)`,
 and drop the leading 0x00 bytes.
 
 ```
-> hash := sha256("com.tendermint.consensus/MyConcreteName")
+> hash := sha256("com.teragrid.consensus/MyConcreteName")
 > hex.EncodeBytes(hash) // 0x{00 00 A8 FC 54 00 00 00 BB 9C 83 DD ...} (example)
 ```
 
@@ -474,6 +474,6 @@ bytes.  As in Protobuf, a nil struct field value is not encoded at all.
 
 # Amino in other langauges
 
-[Open an Issue on GitHub](https://github.com/tendermint/go-amino/issues), as we
+[Open an Issue on GitHub](https://github.com/teragrid/go-amino/issues), as we
 will pay out bounties for implementations in other languages.  In Golang, we are
 are primarily interested in codec generators.

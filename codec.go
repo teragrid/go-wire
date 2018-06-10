@@ -198,7 +198,7 @@ func (cdc *Codec) RegisterInterface(ptr interface{}, opts *InterfaceOptions) {
 // This function should be used to register concrete types that will appear in
 // interface fields/elements to be encoded/decoded by go-amino.
 // Usage:
-// `amino.RegisterConcrete(MyStruct1{}, "com.tendermint/MyStruct1", nil)`
+// `amino.RegisterConcrete(MyStruct1{}, "com.teragrid/MyStruct1", nil)`
 func (cdc *Codec) RegisterConcrete(o interface{}, name string, opts *ConcreteOptions) {
 
 	var pointerPreferred bool

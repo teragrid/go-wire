@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/tendermint/go-amino/tests"
+	"github.com/teragrid/go-amino/tests"
 )
 
 //-------------------------------------
@@ -372,7 +372,7 @@ var fuzzFuncs = []interface{}{
 //----------------------------------------
 // From https://github.com/google/gofuzz/blob/master/fuzz.go
 // (Apache2.0 License)
-// TODO move to tmlibs/common/random.go?
+// TODO move to teralibs/common/random.go?
 
 type charRange struct {
 	first, last rune

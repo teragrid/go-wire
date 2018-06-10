@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tendermint/go-amino"
+	"github.com/teragrid/go-amino"
 )
 
 type SimpleStruct struct {

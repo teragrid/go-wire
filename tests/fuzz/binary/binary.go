@@ -1,8 +1,8 @@
 package fuzz_binary
 
 import (
-	"github.com/tendermint/go-amino"
-	"github.com/tendermint/go-amino/tests"
+	"github.com/teragrid/go-amino"
+	"github.com/teragrid/go-amino/tests"
 )
 
 //-------------------------------------

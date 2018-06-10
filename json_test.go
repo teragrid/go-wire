@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	amino "github.com/tendermint/go-amino"
+	amino "github.com/teragrid/go-amino"
 )
 
 func registerTransports(cdc *amino.Codec) {

@@ -73,17 +73,26 @@
   version = "v1.2.1"
 
 [[projects]]
-  name = "github.com/tendermint/tmlibs"
+  branch = "master"
+  name = "github.com/teragrid/go-amino"
+  packages = [
+    ".",
+    "tests"
+  ]
+  revision = "68c347fe3e5d01e64fadcbdda2d7004f512e2e01"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/teragrid/teralibs"
   packages = [
     "common",
     "log"
   ]
-  revision = "2e24b64fc121dcdf1cabceab8dc2f7257675483c"
-  version = "v0.8.1"
+  revision = "8a7405f0c60db4b836333b919a1bfc91577a2c36"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "39df8000374b1ed2d9b5b044c56ac18ece740d6d3aa911648feddeb88fe7a422"
+  inputs-digest = "010f5cfb03dd5585937e1983e4c6e30e8287d4389f8d2fbeceeabef1dc2fafca"
   solver-name = "gps-cdcl"
   solver-version = 1

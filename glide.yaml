@@ -1,4 +1,4 @@
-package: github.com/tendermint/go-amino
+package: github.com/teragrid/go-amino
 import:
 - package: github.com/davecgh/go-spew
   version: ^1.1.0

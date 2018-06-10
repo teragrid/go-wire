@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/tendermint/go-amino"
-	"github.com/tendermint/go-amino/tests"
+	"github.com/teragrid/go-amino"
+	"github.com/teragrid/go-amino/tests"
 )
 
 func main() {
@@ -130,10 +130,10 @@ func main() {
 	}
 
 	cdc := amino.NewCodec()
-	cdc.RegisterConcrete(&tests.ComplexSt{}, "com.tendermint/complex_st", nil)
-	cdc.RegisterConcrete(&tests.PrimitivesStruct{}, "com.tendermint/primitive_st", nil)
-	cdc.RegisterConcrete(&tests.ArraysStruct{}, "com.tendermint/arrays_st", nil)
-	cdc.RegisterConcrete(&tests.SlicesStruct{}, "com.tendermint/slices_st", nil)
+	cdc.RegisterConcrete(&tests.ComplexSt{}, "com.teragrid/complex_st", nil)
+	cdc.RegisterConcrete(&tests.PrimitivesStruct{}, "com.teragrid/primitive_st", nil)
+	cdc.RegisterConcrete(&tests.ArraysStruct{}, "com.teragrid/arrays_st", nil)
+	cdc.RegisterConcrete(&tests.SlicesStruct{}, "com.teragrid/slices_st", nil)
 
 	for i, seed := range seeds {
 		blob, err := cdc.MarshalBinary(seed)

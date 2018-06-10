@@ -89,11 +89,11 @@ BUG FIXES:
 
 FEATURES:
 
-- `github.com/tendermint/go-data` -> `github.com/tendermint/go-wire/data`
+- `github.com/teragrid/go-data` -> `github.com/teragrid/go-wire/data`
 
 IMPROVEMENTS:
 
-- Update imports for new `tmlibs` repository
+- Update imports for new `teralibs` repository
 
 ## 0.6.1 (April 18, 2017)
 
